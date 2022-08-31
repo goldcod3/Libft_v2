@@ -41,6 +41,9 @@ FILES_STR = ft_split ft_strchr ft_strdup\
 DIR_TO = ft_to/
 FILES_TO = ft_atoi ft_itoa ft_tolower ft_toupper
 
+DIR_GNL = ft_gnl/
+FILES_GNL = ft_gnl ft_gnl_utils
+
 DIR_SRC = src/
 FILES_SRC += $(addprefix $(DIR_IS), $(FILES_IS))
 FILES_SRC += $(addprefix $(DIR_LST), $(FILES_LST))
@@ -48,6 +51,7 @@ FILES_SRC += $(addprefix $(DIR_MEM), $(FILES_MEM))
 FILES_SRC += $(addprefix $(DIR_PUT), $(FILES_PUT))
 FILES_SRC += $(addprefix $(DIR_STR), $(FILES_STR))
 FILES_SRC += $(addprefix $(DIR_TO), $(FILES_TO))
+FILES_SRC += $(addprefix $(DIR_GNL), $(FILES_GNL))
 
 DIR_OBJ = obj/
 FILES_OBJ = $(addprefix $(DIR_OBJ), $(addsuffix .o, $(FILES_SRC)))
@@ -77,6 +81,7 @@ $(DIRECTORIES):
 	@mkdir -p $(addprefix $(DIR_OBJ), $(DIR_PUT))
 	@mkdir -p $(addprefix $(DIR_OBJ), $(DIR_STR))
 	@mkdir -p $(addprefix $(DIR_OBJ), $(DIR_TO))
+	@mkdir -p $(addprefix $(DIR_OBJ), $(DIR_GNL))
 
 
 ###################
