@@ -44,6 +44,10 @@ FILES_TO = ft_atoi ft_itoa ft_tolower ft_toupper
 DIR_GNL = ft_gnl/
 FILES_GNL = ft_gnl ft_gnl_utils
 
+DIR_PRINT = ft_printf/
+FILES_PRINT = ft_print_hex ft_print_num ft_print_ptr\
+	 ft_print_str ft_printf
+
 DIR_SRC = src/
 FILES_SRC += $(addprefix $(DIR_IS), $(FILES_IS))
 FILES_SRC += $(addprefix $(DIR_LST), $(FILES_LST))
@@ -52,11 +56,10 @@ FILES_SRC += $(addprefix $(DIR_PUT), $(FILES_PUT))
 FILES_SRC += $(addprefix $(DIR_STR), $(FILES_STR))
 FILES_SRC += $(addprefix $(DIR_TO), $(FILES_TO))
 FILES_SRC += $(addprefix $(DIR_GNL), $(FILES_GNL))
+FILES_SRC += $(addprefix $(DIR_PRINT), $(FILES_PRINT))
 
 DIR_OBJ = obj/
 FILES_OBJ = $(addprefix $(DIR_OBJ), $(addsuffix .o, $(FILES_SRC)))
-
-DIRECTORIES	= .cache_exists
 
 
 #####################
@@ -69,11 +72,11 @@ $(NAME): $(FILES_OBJ)
 	@ar rsc $(NAME) $(FILES_OBJ)
 	@echo "[$(BLUE)> LIBFT LIBRARY COMPILED $(END_C)][$(GREEN) SUCCESS! $(END_C)] $(NAME)"
 
-$(DIR_OBJ)%.o: $(DIR_SRC)%.c | $(DIRECTORIES)
+$(DIR_OBJ)%.o: $(DIR_SRC)%.c | DIRECTORIES
 	@gcc $(CFLAGS) -I $(INCLUDES) -c $< -o $@
 	@echo "[$(YELLOW) *LIBFT* COMPILED OBJECT $(END_C)][$(GREEN)-->$(END_C)] $@"
 
-$(DIRECTORIES):
+DIRECTORIES:
 	@mkdir -p $(DIR_OBJ)
 	@mkdir -p $(addprefix $(DIR_OBJ), $(DIR_IS))
 	@mkdir -p $(addprefix $(DIR_OBJ), $(DIR_LST))
@@ -82,6 +85,7 @@ $(DIRECTORIES):
 	@mkdir -p $(addprefix $(DIR_OBJ), $(DIR_STR))
 	@mkdir -p $(addprefix $(DIR_OBJ), $(DIR_TO))
 	@mkdir -p $(addprefix $(DIR_OBJ), $(DIR_GNL))
+	@mkdir -p $(addprefix $(DIR_OBJ), $(DIR_PRINT))
 
 
 ###################

@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgomes-o <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/06 11:45:06 by lgomes-o          #+#    #+#             */
-/*   Updated: 2022/07/16 13:50:00 by lgomes-o         ###   ########.fr       */
+/*   Created: 2022/09/01 21:00:07 by lgomes-o          #+#    #+#             */
+/*   Updated: 2022/09/02 15:15:24 by lgomes-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef PRINTF_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
-
-# ifndef FD_MAX
-#  define FD_MAX 4096
-# endif
+# define PRINTF_H
 
 # include "libft.h"
+# include <stdarg.h>
 
-size_t	ft_gnlstrlen(char *str);
-char	*ft_gnlstrchr(char *str, int c);
-char	*ft_gnljoin(char *s1, char *s2);
-char	*get_next_line(int fd);
-char	*get_next_line_multi(int fd);
+int			ft_printf(const char *str, ...);
+size_t		printf_char(char c);
+size_t		printf_str(char *str);
+size_t		printf_ptr(unsigned long lnum);
+size_t		printf_integer(int num);
+size_t		printf_unsigned(unsigned int unum);
+size_t		printf_hex(unsigned int num, const char format);
+
+char		*ft_utoa(unsigned int num);
 
 #endif

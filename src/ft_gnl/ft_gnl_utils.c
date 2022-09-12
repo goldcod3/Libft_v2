@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "gnl.h"
+#include "get_next_line.h"
 
 size_t	ft_gnlstrlen(char *str)
 {
@@ -26,7 +26,7 @@ size_t	ft_gnlstrlen(char *str)
 
 char	*ft_gnlstrchr(char *str, int c)
 {
-	size_t i;
+	size_t	i;
 
 	if (!str)
 		return (NULL);

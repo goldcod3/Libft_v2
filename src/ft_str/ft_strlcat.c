@@ -6,7 +6,7 @@
 /*   By: lgomes-o <lgomes-o@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 14:36:41 by lgomes-o          #+#    #+#             */
-/*   Updated: 2022/06/19 16:17:55 by lgomes-o         ###   ########.fr       */
+/*   Updated: 2022/09/12 03:23:37 by lgomes-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *d, char *s, size_t size)
 	i = 0;
 	if (size > 0 && len < size)
 	{
-		while (*(s + i) != 0 && len < size - 1)
+		while (*(s + i) && len < size - 1)
 		{
 			*(d + len) = *(s + i);
 			len++;

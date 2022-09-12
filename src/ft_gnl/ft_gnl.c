@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "gnl.h"
+#include "get_next_line.h"
 
 char	*get_line(char *s)
 {
@@ -103,7 +103,7 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-char	*get_next_line_multi(int fd)
+char	*get_next_line_bonus(int fd)
 {
 	static char	*subbuf[FD_MAX];
 	char		*line;
